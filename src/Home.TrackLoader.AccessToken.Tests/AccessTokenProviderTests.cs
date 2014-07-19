@@ -9,7 +9,7 @@ namespace Home.TrackLoader.AccessToken.Tests
         [Test]
         public void GetAccessTokenTest()
         {
-            var provider = new AccessTokenProvider();
+            var provider = new VkSessionInfoProvider();
             Console.WriteLine(provider.GetAccessToken().Result);
         }
     }

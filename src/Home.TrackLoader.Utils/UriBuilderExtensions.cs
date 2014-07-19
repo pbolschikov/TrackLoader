@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Home.TrackLoader.AccessToken
+namespace Home.TrackLoader.Utils
 {
-    internal static class UriBuilderExtensions
+    public static class UriBuilderExtensions
     {
         public static UriBuilder Append(this UriBuilder uriBuilder, string parameter, string value)
         {

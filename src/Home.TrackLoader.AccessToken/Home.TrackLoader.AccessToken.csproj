@@ -72,13 +72,10 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccessTokenProvider.cs" />
+    <Compile Include="VkSessionInfoProvider.cs" />
     <Compile Include="IMainWindowModel.cs" />
     <Compile Include="IView.cs" />
     <Compile Include="MainWindowModel.cs" />
-    <Compile Include="UriBuilderExtensions.cs" />
-    <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="VkSettings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -129,6 +126,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Home.TrackLoader.Utils\Home.TrackLoader.Utils.csproj">
+      <Project>{e267c7eb-b819-4f31-b9f2-333920414f04}</Project>
+      <Name>Home.TrackLoader.Utils</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Home.TrackLoader\Home.TrackLoader.csproj">
       <Project>{A6AFADA4-DBF3-4939-919A-F090CE0ED266}</Project>
       <Name>Home.TrackLoader</Name>

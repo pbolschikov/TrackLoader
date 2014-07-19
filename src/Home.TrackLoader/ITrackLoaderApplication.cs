@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 
-namespace Home.EslLoader
+namespace Home.TrackLoader
 {
-    internal interface IEslApplication
+    public interface ITrackLoaderApplication
     {
         Task Start();
     }

@@ -8,16 +8,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Home.EslLoader {
+namespace Home.TrackLoader {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class EslConfiguration : global::System.Configuration.ApplicationSettingsBase {
+    internal sealed partial class TrackLoaderConfiguration : global::System.Configuration.ApplicationSettingsBase {
         
-        private static EslConfiguration defaultInstance = ((EslConfiguration)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new EslConfiguration())));
+        private static TrackLoaderConfiguration defaultInstance = ((TrackLoaderConfiguration)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new TrackLoaderConfiguration())));
         
-        public static EslConfiguration Default {
+        public static TrackLoaderConfiguration Default {
             get {
                 return defaultInstance;
             }
@@ -29,15 +29,6 @@ namespace Home.EslLoader {
         public string OutputFolder {
             get {
                 return ((string)(this["OutputFolder"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://vk.com/audios5025207")]
-        public string EslUrl {
-            get {
-                return ((string)(this["EslUrl"]));
             }
         }
     }

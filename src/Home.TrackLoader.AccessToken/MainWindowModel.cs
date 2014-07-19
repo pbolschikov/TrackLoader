@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web;
+using Home.TrackLoader.Utils;
 
 namespace Home.TrackLoader.AccessToken
 {
@@ -20,9 +21,15 @@ namespace Home.TrackLoader.AccessToken
         }
 
 
-        public string AccessToken
+        public SessionInfo AccessToken
         {
-            get { return HttpUtility.ParseQueryString(Source.Fragment)["#access_token"]; }
+            get
+            {
+                var nvc = HttpUtility.ParseQueryString(Source.Fragment);
+                var accessToken = nvc["#access_token"];
+                var userId = nvc["user_id"];
+                return new SessionInfo(accessToken, userId); 
+            }
         }
 
         public Uri Source { get; set; }

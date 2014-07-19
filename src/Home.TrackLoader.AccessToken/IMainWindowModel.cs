@@ -5,6 +5,6 @@ namespace Home.TrackLoader.AccessToken
     internal interface IMainWindowModel
     {
         Uri Source { get; set; }
-        string AccessToken { get; }
+        SessionInfo AccessToken { get; }
     }
 }

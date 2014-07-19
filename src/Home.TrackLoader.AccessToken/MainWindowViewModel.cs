@@ -20,14 +20,14 @@ namespace Home.TrackLoader.AccessToken
             set
             {
                 m_MainWindowModel.Source = value;
-                if (m_MainWindowModel.AccessToken != null)
+                if (m_MainWindowModel.AccessToken.IsValid)
                 {
                     m_View.DialogResult = true;
                 }
             }
         }
 
-        public string AccessToken
+        public SessionInfo AccessToken
         {
             get { return m_MainWindowModel.AccessToken; }
         }
@@ -41,7 +41,7 @@ namespace Home.TrackLoader.AccessToken
 
     public interface IMainWindowViewModel
     {
-        string AccessToken { get; }
+        SessionInfo AccessToken { get; }
         bool? ShowDilalog();
     }
 }

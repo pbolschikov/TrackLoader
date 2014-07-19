@@ -1,25 +1,27 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Castle.Windsor;
-using Home.EslLoader;
-using Home.TrackLoader.AccessToken.Windsor;
 
 namespace Home.TrackLoader.AccessToken
 {
-    public sealed class AccessTokenProvider : IAccessTokenProvider
+    public sealed class VkSessionInfoProvider : IVkSessionInfoProvider
     {
-        public Task<string> GetAccessToken()
+        private readonly IViewModelFactory m_ViewModelFactory;
+
+        public VkSessionInfoProvider(IViewModelFactory viewModelFactory)
         {
-            var container = new WindsorContainer();
-            container.Install(new AccessTokenInstaller());
-            var tcs = new TaskCompletionSource<string>();
+            m_ViewModelFactory = viewModelFactory;
+        }
+
+        public Task<SessionInfo> GetAccessToken()
+        {
+            var tcs = new TaskCompletionSource<SessionInfo>();
             var thread = new Thread(() =>
                                     {
                                         IMainWindowViewModel viewModel = null;
                                         try
                                         {
-                                            viewModel = container.Resolve<IMainWindowViewModel>();
+                                            viewModel = m_ViewModelFactory.Create();
                                             tcs.SetResult(viewModel.ShowDilalog().GetValueOrDefault()
                                                 ? viewModel.AccessToken
                                                 : null);
@@ -32,7 +34,7 @@ namespace Home.TrackLoader.AccessToken
                                         {
                                             if (viewModel != null)
                                             {
-                                                container.Release(viewModel);  
+                                                m_ViewModelFactory.Release(viewModel);  
                                             }
                                         }
                                     });
@@ -40,5 +42,11 @@ namespace Home.TrackLoader.AccessToken
             thread.Start();
             return tcs.Task;
         }
+    }
+
+    public interface IViewModelFactory
+    {
+        IMainWindowViewModel Create();
+        void Release(IMainWindowViewModel viewModel);
     }
 }
