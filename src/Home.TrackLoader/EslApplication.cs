@@ -23,6 +23,8 @@ namespace Home.EslLoader
 
         public async Task Start()
         {
+            
+
             var trackInfos =
                 await m_DocumentAnalyzer.GetTracks(m_EslConfiguration.EslUrl);
             await Task.WhenAll(trackInfos.Select(downloadTrack));

@@ -65,6 +65,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>EslConfiguration.settings</DependentUpon>
     </Compile>
+    <Compile Include="IAccessTokenProvider.cs" />
     <Compile Include="IDocumentAnalyzer.cs" />
     <Compile Include="IEslApplication.cs" />
     <Compile Include="ITrackLoader.cs" />

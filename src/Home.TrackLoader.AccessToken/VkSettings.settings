@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Home.TrackLoader.AccessToken" GeneratedClassName="VkSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ClientId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">3711445</Value>
+    </Setting>
+    <Setting Name="Scope" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">audio</Value>
+    </Setting>
+    <Setting Name="RedirectUri" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://oauth.vk.com/blank.html</Value>
+    </Setting>
+    <Setting Name="Display" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">page</Value>
+    </Setting>
+    <Setting Name="ResponseType" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">token</Value>
+    </Setting>
+    <Setting Name="VkAuthUrl" Type="System.Uri" Scope="Application">
+      <Value Profile="(Default)">https://oauth.vk.com/authorize</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
